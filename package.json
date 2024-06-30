@@ -1,0 +1,40 @@
+{
+  "name": "ride-hailing-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "rimraf ./build && tsc",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon --watch './**/*.ts' --exec 'ts-node' src/index.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ranaawni/ride-hailing-app.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ranaawni/ride-hailing-app/issues"
+  },
+  "homepage": "https://github.com/ranaawni/ride-hailing-app#readme",
+  "devDependencies": {
+    "@types/express": "^4.17.21",
+    "@types/node": "^20.14.9",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.5.2"
+  },
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "class-validator": "^0.14.1",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "glob": "^10.4.2",
+    "mysql": "^2.18.1",
+    "nodemon": "^3.1.4",
+    "pg": "^8.12.0",
+    "reflect-metadata": "^0.2.2",
+    "rimraf": "^5.0.7",
+    "typeorm": "^0.3.20"
+  }
+}
