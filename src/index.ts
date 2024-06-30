@@ -1,4 +1,5 @@
 import { Request, Response } from "express";
+import initializeDB from "./database/index";
 const express = require("express");
 const bodyParser = require("body-parser");
 
@@ -7,6 +8,7 @@ const hostname = process.env.HOST || "0.0.0.0";
 
 async function main() {
     const app = express();
+    await initializeDB();
     app.use(bodyParser.json({ limit: "5mb" }));
     app.use(bodyParser.urlencoded({ limit: "5mb", extended: true }));
 
