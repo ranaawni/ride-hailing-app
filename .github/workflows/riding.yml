@@ -28,3 +28,4 @@ jobs:
         cache: 'npm'
     - run: npm ci
     - run: npm run build --if-presen
+    - run: pm2 restart riding-app
