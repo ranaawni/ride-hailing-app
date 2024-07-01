@@ -27,6 +27,5 @@ jobs:
     - run: npm ci
     - run: |
         touch .env
-        echo "${{secrets.RIDE_HAILING_ENV}}" > .env   
-        
+        echo "${{secrets.RIDE_HAILING_ENV}}" > .env      
     - run: pm2 restart ride-app
