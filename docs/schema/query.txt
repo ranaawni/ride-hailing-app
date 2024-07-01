@@ -1,0 +1,42 @@
+1. Create user table query :
+
+   CREATE TABLE  IF NOT EXISTS user (
+                id int not null primary key auto_increment,
+                firstName varchar(20) NOT NULL,
+                lastName varchar(20) NOT NULL,
+                email varchar(50) NOT NULL,
+                password varchar(150) NOT NULL,
+                role enum('rider', 'driver') NOT NULL,
+                createdAt timestamp NOT NULL DEFAULT now()
+            );
+
+2. Create ride table query :
+
+   CREATE TABLE IF NOT EXISTS ride (
+            id int not null primary key auto_increment,
+            riderId INT(30),
+            driverId INT(30),
+            status enum('requested', 'accepted') NOT NULL,
+            source varchar(50) NOT NULL,
+            destination varchar(50),
+            createdAt timestamp NOT NULL DEFAULT now(),
+            KEY IDX_RIDE_RIDER (riderId),
+            KEY IDX_RIDE_DRIVER (driverId),
+            CONSTRAINT FK_ride_user FOREIGN KEY (riderId) REFERENCES user(id) ON DELETE CASCADE ON UPDATE CASCADE,
+            CONSTRAINT FK_ride_driver FOREIGN KEY (driverId) REFERENCES user(id) ON DELETE CASCADE ON UPDATE CASCADE
+        );
+
+
+3. Get all rides for a specific user query :
+
+   SELECT id, riderId, driverId, status, source, destination, createdAt FROM ride WHERE ride.riderId = userId OR ride.driverId = userId;
+
+
+
+NOTE : we can create a Role table as a lookup table to contain all the roles but I decided to put it as enum inside User table to make the DB simple
+
+
+   
+ 
+
+   
