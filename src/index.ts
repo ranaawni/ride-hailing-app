@@ -2,6 +2,8 @@ import { Request, Response } from "express";
 import initializeDB from "./database/index";
 const express = require("express");
 const bodyParser = require("body-parser");
+const router = require("./routes")
+import { errorHandler } from "./common/ErrorMiddleware";
 
 require("dotenv").config();
 const hostname = process.env.HOST || "0.0.0.0";
@@ -23,6 +25,9 @@ async function main() {
         );
         next();
       });
+      app.use("/", router.router);
+      app.use(errorHandler)
+
 
       app.get("/", (_req: any, Response: any) => {
         Response.send("hi ");
