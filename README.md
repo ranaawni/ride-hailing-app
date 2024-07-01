@@ -8,7 +8,7 @@ This app is designed to handle a small transportation actions, like register use
 
 - You can find DB schema [here](https://github.com/ranaawni/ride-hailing-app/blob/main/docs/schema/ride-hailing-schema.jpg)
 
-- This app use internal package "ride-hailing-entities" which used to create all migrations and run it on the DB, so it's like a small  package to handle table creation and entities, and you can find it [here](https://github.com/ranaawni/ride-hailing-entities)
+- You may discover the internal package "ride-hailing-entities" [here], which is used by this application to construct all migrations and run them on the database. It functions similarly to a small package that handles table creation and entity management.(https://ride-hailing-entities.github.com/ranaawni)
 
 
 ## How to run
@@ -28,7 +28,7 @@ npm run create-table
 
 ```
 
-- I make the env file public and didn't put it inside the gitignore so you can use it instead of create new DB
+- You can use the environment file rather than creating a new database because I made it public and did not include it in the gitignore.
 
 - Run the app, you should be inside the root file of the project
 
@@ -43,6 +43,6 @@ npm run dev
 
 ## Additional
 
-- For the query that fetch all rides for specific user I wrote as stored procedure inside [ride-hailing-entities](https://github.com/ranaawni/ride-hailing-entities/blob/main/src/database/migrations/1719869418638-getRidesForSpecificUserProcedure.ts) and you can find all app queries inside this [file](https://github.com/ranaawni/ride-hailing-app/blob/main/docs/schema/query.txt)
+- All of the app queries can be found in this [file](https://github.com/ranaawni/ride-hailing-app/blob/main/docs/schema/query.txt), and I wrote the stored procedure for the query that fetches all rides for a specific user inside [ride-hailing-entities](https://github.com/ranaawni/ride-hailing-entities/blob/main/src/database/migrations/1719869418638-getRidesForSpecificUserProcedure.ts).
 
-- This the app [URL](http://3.249.111.150)
+- This is the app [URL](http://3.249.111.150)
