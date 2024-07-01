@@ -8,10 +8,11 @@ export const UserResolver = {
            const { firstName,
             lastName,
             email,
-            password
+            password,
+            role
            } = req.body
 
-           await UserService.registerUser({firstName,lastName,email,password})
+           await UserService.registerUser({firstName,lastName,email,password,role})
 
            return res.status(StatusCodes.CREATED).send("User Register Successfully")
         }
