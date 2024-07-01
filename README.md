@@ -8,7 +8,7 @@ This app is designed to handle a small transportation actions, like register use
 
 - You can find DB schema [here](https://github.com/ranaawni/ride-hailing-app/blob/main/docs/schema/ride-hailing-schema.jpg)
 
-- You may discover the internal package "ride-hailing-entities" [here], which is used by this application to construct all migrations and run them on the database. It functions similarly to a small package that handles table creation and entity management.(https://ride-hailing-entities.github.com/ranaawni)
+- You may discover the internal package "ride-hailing-entities" [here](https://ride-hailing-entities.github.com/ranaawni), which is used by this application to construct all migrations and run them on the database. It functions similarly to a small package that handles table creation and entity management.
 
 
 ## How to run
