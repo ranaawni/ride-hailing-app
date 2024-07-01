@@ -43,6 +43,6 @@ npm run dev
 
 ## Additional
 
-- For the query that fetch all rides for specific user I wrote as stored procedure inside [ride-hailing-entities] (https://github.com/ranaawni/ride-hailing-entities/blob/main/src/database/migrations/1719869418638-getRidesForSpecificUserProcedure.ts) and you can find all app queries inside this [file] (https://github.com/ranaawni/ride-hailing-app/blob/main/docs/schema/query.txt)
+- For the query that fetch all rides for specific user I wrote as stored procedure inside [ride-hailing-entities](https://github.com/ranaawni/ride-hailing-entities/blob/main/src/database/migrations/1719869418638-getRidesForSpecificUserProcedure.ts) and you can find all app queries inside this [file](https://github.com/ranaawni/ride-hailing-app/blob/main/docs/schema/query.txt)
 
 - This the app [URL](http://3.249.111.150)
