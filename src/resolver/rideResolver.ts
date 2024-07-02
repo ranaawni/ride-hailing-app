@@ -7,10 +7,10 @@ export const RideResolver = {
 		try {
 			const { riderId, source, destination } = req.body;
 
-			await RideService.requestRide({ riderId, source, destination });
+			const ride = await RideService.requestRide({ riderId, source, destination });
 			return res
 				.status(StatusCodes.CREATED)
-				.send("Ride Requested Successfully");
+				.send(ride);
 		} catch (err) {
 			return next(err);
 		}

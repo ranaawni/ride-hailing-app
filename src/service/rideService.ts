@@ -45,7 +45,8 @@ export const RideService = {
 			status: RideStatus.REQUESTED,
 		});
 
-		await RideRepository.save(ride);
+		const requestedRide = await RideRepository.save(ride);
+		return requestedRide
 	},
 
 	acceptRide: async ({

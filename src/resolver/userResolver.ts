@@ -7,7 +7,7 @@ export const UserResolver = {
 		try {
 			const { firstName, lastName, email, password, role } = req.body;
 
-			await UserService.registerUser({
+			const user = await UserService.registerUser({
 				firstName,
 				lastName,
 				email,
@@ -15,7 +15,7 @@ export const UserResolver = {
 				role,
 			});
 
-			return res.status(StatusCodes.CREATED).send("User Register Successfully");
+			return res.status(StatusCodes.CREATED).send(user);
 		} catch (err) {
 			return next(err);
 		}

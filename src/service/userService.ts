@@ -36,6 +36,8 @@ export const UserService = {
 			role,
 		});
 
-		await UserRepository.save(createdUser);
+		let user = await UserRepository.save(createdUser);
+		return user;
+
 	},
 };

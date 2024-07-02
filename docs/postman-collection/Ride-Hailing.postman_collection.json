@@ -13,7 +13,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"firstName\" : {{string}},\n    \"lastName\": {{string}},\n    \"email\" : {{string}},\n    \"password\" : {{string}},\n    \"role\": {{ string }} //[rider, driver]\n}",
+					"raw": "{\n    \"firstName\" : {{string}},\n    \"lastName\": {{string}},\n    \"email\" : {{string}},\n    \"password\": {{string}},\n    \"role\": {{string}} // ride,driver\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -21,9 +21,13 @@
 					}
 				},
 				"url": {
-					"raw": "{{api}}",
+					"raw": "{{api}}/users/register",
 					"host": [
 						"{{api}}"
+					],
+					"path": [
+						"users",
+						"register"
 					]
 				}
 			},
@@ -43,13 +47,13 @@
 							}
 						},
 						"url": {
-							"raw": "http://3.249.111.150/users/register",
+							"raw": "http://3.255.136.162/users/register",
 							"protocol": "http",
 							"host": [
 								"3",
-								"249",
-								"111",
-								"150"
+								"255",
+								"136",
+								"162"
 							],
 							"path": [
 								"users",
@@ -79,13 +83,13 @@
 							}
 						},
 						"url": {
-							"raw": "http://3.249.111.150/users/register",
+							"raw": "http://3.255.136.162/users/register",
 							"protocol": "http",
 							"host": [
 								"3",
-								"249",
-								"111",
-								"150"
+								"255",
+								"136",
+								"162"
 							],
 							"path": [
 								"users",
@@ -115,13 +119,13 @@
 							}
 						},
 						"url": {
-							"raw": "http://3.249.111.150/users/register",
+							"raw": "http://3.255.136.162/users/register",
 							"protocol": "http",
 							"host": [
 								"3",
-								"249",
-								"111",
-								"150"
+								"255",
+								"136",
+								"162"
 							],
 							"path": [
 								"users",
@@ -143,7 +147,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"firstName\" : \"Awni\",\n    \"lastName\": \"Mohammad\",\n    \"email\" : \"awnid@gmail.com\",\n    \"password\" : \"1234\",\n    \"role\": \"driver\"\n}",
+							"raw": "{\n    \"firstName\" : \"Rana\",\n    \"lastName\": \"Alhmoud\",\n    \"email\" : \"ranaalhmoud962@gmail.com\",\n    \"password\":\"rana123\",\n    \"role\": \"driver\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -151,13 +155,13 @@
 							}
 						},
 						"url": {
-							"raw": "http://3.249.111.150/users/register",
+							"raw": "http://3.255.136.162/users/register",
 							"protocol": "http",
 							"host": [
 								"3",
-								"249",
-								"111",
-								"150"
+								"255",
+								"136",
+								"162"
 							],
 							"path": [
 								"users",
@@ -170,7 +174,7 @@
 					"_postman_previewlanguage": null,
 					"header": null,
 					"cookie": [],
-					"body": "User Register Successfully"
+					"body": "{\n    \"firstName\": \"Rana\",\n    \"lastName\": \"Alhmoud\",\n    \"email\": \"ranaalhmoud962@gmail.com\",\n    \"password\": \"$2b$10$CO51CxoVivCaZg/2U3HR9OsseIifobCKyfogvGcUP5NtBfQgZtSzG\",\n    \"role\": \"driver\",\n    \"id\": 8,\n    \"createdAt\": \"2024-07-02T06:14:19.000Z\"\n}"
 				},
 				{
 					"name": "Email is required",
@@ -187,13 +191,13 @@
 							}
 						},
 						"url": {
-							"raw": "http://3.249.111.150/users/register",
+							"raw": "http://3.255.136.162/users/register",
 							"protocol": "http",
 							"host": [
 								"3",
-								"249",
-								"111",
-								"150"
+								"255",
+								"136",
+								"162"
 							],
 							"path": [
 								"users",
@@ -223,13 +227,13 @@
 							}
 						},
 						"url": {
-							"raw": "http://3.249.111.150/users/register",
+							"raw": "http://3.255.136.162/users/register",
 							"protocol": "http",
 							"host": [
 								"3",
-								"249",
-								"111",
-								"150"
+								"255",
+								"136",
+								"162"
 							],
 							"path": [
 								"users",
@@ -259,13 +263,13 @@
 							}
 						},
 						"url": {
-							"raw": "http://3.249.111.150/users/register",
+							"raw": "http://3.255.136.162/users/register",
 							"protocol": "http",
 							"host": [
 								"3",
-								"249",
-								"111",
-								"150"
+								"255",
+								"136",
+								"162"
 							],
 							"path": [
 								"users",
@@ -295,13 +299,13 @@
 							}
 						},
 						"url": {
-							"raw": "http://3.249.111.150/users/register",
+							"raw": "http://3.255.136.162/users/register",
 							"protocol": "http",
 							"host": [
 								"3",
-								"249",
-								"111",
-								"150"
+								"255",
+								"136",
+								"162"
 							],
 							"path": [
 								"users",
@@ -331,13 +335,13 @@
 							}
 						},
 						"url": {
-							"raw": "http://3.249.111.150/users/register",
+							"raw": "http://3.255.136.162/users/register",
 							"protocol": "http",
 							"host": [
 								"3",
-								"249",
-								"111",
-								"150"
+								"255",
+								"136",
+								"162"
 							],
 							"path": [
 								"users",
@@ -367,13 +371,13 @@
 							}
 						},
 						"url": {
-							"raw": "http://3.249.111.150/users/register",
+							"raw": "http://3.255.136.162/users/register",
 							"protocol": "http",
 							"host": [
 								"3",
-								"249",
-								"111",
-								"150"
+								"255",
+								"136",
+								"162"
 							],
 							"path": [
 								"users",
@@ -403,13 +407,13 @@
 							}
 						},
 						"url": {
-							"raw": "http://3.249.111.150/users/register",
+							"raw": "http://3.255.136.162/users/register",
 							"protocol": "http",
 							"host": [
 								"3",
-								"249",
-								"111",
-								"150"
+								"255",
+								"136",
+								"162"
 							],
 							"path": [
 								"users",
@@ -441,9 +445,13 @@
 					}
 				},
 				"url": {
-					"raw": "{{api}}",
+					"raw": "{{api}}/rides/request",
 					"host": [
 						"{{api}}"
+					],
+					"path": [
+						"rides",
+						"request"
 					]
 				}
 			},
@@ -463,13 +471,13 @@
 							}
 						},
 						"url": {
-							"raw": "http://3.249.111.150/rides/request",
+							"raw": "http://3.255.136.162/rides/request",
 							"protocol": "http",
 							"host": [
 								"3",
-								"249",
-								"111",
-								"150"
+								"255",
+								"136",
+								"162"
 							],
 							"path": [
 								"rides",
@@ -482,7 +490,7 @@
 					"_postman_previewlanguage": null,
 					"header": null,
 					"cookie": [],
-					"body": "Ride Requested Successfully"
+					"body": "{\n    \"riderId\": 1,\n    \"status\": \"requested\",\n    \"source\": \"0.7896, 0.89544\",\n    \"destination\": \"0.98556, 0.78965\",\n    \"id\": 4,\n    \"createdAt\": \"2024-07-02T06:18:47.000Z\"\n}"
 				},
 				{
 					"name": "Requested Ride Already Exist",
@@ -499,13 +507,13 @@
 							}
 						},
 						"url": {
-							"raw": "http://3.249.111.150/rides/request",
+							"raw": "http://3.255.136.162/rides/request",
 							"protocol": "http",
 							"host": [
 								"3",
-								"249",
-								"111",
-								"150"
+								"255",
+								"136",
+								"162"
 							],
 							"path": [
 								"rides",
@@ -535,13 +543,13 @@
 							}
 						},
 						"url": {
-							"raw": "http://3.249.111.150/rides/request",
+							"raw": "http://3.255.136.162/rides/request",
 							"protocol": "http",
 							"host": [
 								"3",
-								"249",
-								"111",
-								"150"
+								"255",
+								"136",
+								"162"
 							],
 							"path": [
 								"rides",
@@ -571,13 +579,13 @@
 							}
 						},
 						"url": {
-							"raw": "http://3.249.111.150/rides/request",
+							"raw": "http://3.255.136.162/rides/request",
 							"protocol": "http",
 							"host": [
 								"3",
-								"249",
-								"111",
-								"150"
+								"255",
+								"136",
+								"162"
 							],
 							"path": [
 								"rides",
@@ -607,13 +615,13 @@
 							}
 						},
 						"url": {
-							"raw": "http://3.249.111.150/rides/request",
+							"raw": "http://3.255.136.162/rides/request",
 							"protocol": "http",
 							"host": [
 								"3",
-								"249",
-								"111",
-								"150"
+								"255",
+								"136",
+								"162"
 							],
 							"path": [
 								"rides",
@@ -643,13 +651,13 @@
 							}
 						},
 						"url": {
-							"raw": "http://3.249.111.150/rides/request",
+							"raw": "http://3.255.136.162/rides/request",
 							"protocol": "http",
 							"host": [
 								"3",
-								"249",
-								"111",
-								"150"
+								"255",
+								"136",
+								"162"
 							],
 							"path": [
 								"rides",
@@ -679,13 +687,13 @@
 							}
 						},
 						"url": {
-							"raw": "http://3.249.111.150/rides/request",
+							"raw": "http://3.255.136.162/rides/request",
 							"protocol": "http",
 							"host": [
 								"3",
-								"249",
-								"111",
-								"150"
+								"255",
+								"136",
+								"162"
 							],
 							"path": [
 								"rides",
@@ -715,13 +723,13 @@
 							}
 						},
 						"url": {
-							"raw": "http://3.249.111.150/rides/request",
+							"raw": "http://3.255.136.162/rides/request",
 							"protocol": "http",
 							"host": [
 								"3",
-								"249",
-								"111",
-								"150"
+								"255",
+								"136",
+								"162"
 							],
 							"path": [
 								"rides",
@@ -753,9 +761,13 @@
 					}
 				},
 				"url": {
-					"raw": "{{api}}",
+					"raw": "{{api}}/rides/accept",
 					"host": [
 						"{{api}}"
+					],
+					"path": [
+						"rides",
+						"accept"
 					]
 				}
 			},
@@ -775,13 +787,13 @@
 							}
 						},
 						"url": {
-							"raw": "http://3.249.111.150/rides/accept",
+							"raw": "http://3.255.136.162/rides/accept",
 							"protocol": "http",
 							"host": [
 								"3",
-								"249",
-								"111",
-								"150"
+								"255",
+								"136",
+								"162"
 							],
 							"path": [
 								"rides",
@@ -811,13 +823,13 @@
 							}
 						},
 						"url": {
-							"raw": "http://3.249.111.150/rides/accept",
+							"raw": "http://3.255.136.162/rides/accept",
 							"protocol": "http",
 							"host": [
 								"3",
-								"249",
-								"111",
-								"150"
+								"255",
+								"136",
+								"162"
 							],
 							"path": [
 								"rides",
@@ -847,13 +859,13 @@
 							}
 						},
 						"url": {
-							"raw": "http://3.249.111.150/rides/accept",
+							"raw": "http://3.255.136.162/rides/accept",
 							"protocol": "http",
 							"host": [
 								"3",
-								"249",
-								"111",
-								"150"
+								"255",
+								"136",
+								"162"
 							],
 							"path": [
 								"rides",
@@ -883,13 +895,13 @@
 							}
 						},
 						"url": {
-							"raw": "http://3.249.111.150/rides/accept",
+							"raw": "http://3.255.136.162/rides/accept",
 							"protocol": "http",
 							"host": [
 								"3",
-								"249",
-								"111",
-								"150"
+								"255",
+								"136",
+								"162"
 							],
 							"path": [
 								"rides",
@@ -919,13 +931,13 @@
 							}
 						},
 						"url": {
-							"raw": "http://3.249.111.150/rides/accept",
+							"raw": "http://3.255.136.162/rides/accept",
 							"protocol": "http",
 							"host": [
 								"3",
-								"249",
-								"111",
-								"150"
+								"255",
+								"136",
+								"162"
 							],
 							"path": [
 								"rides",
@@ -955,13 +967,13 @@
 							}
 						},
 						"url": {
-							"raw": "http://3.249.111.150/rides/accept",
+							"raw": "http://3.255.136.162/rides/accept",
 							"protocol": "http",
 							"host": [
 								"3",
-								"249",
-								"111",
-								"150"
+								"255",
+								"136",
+								"162"
 							],
 							"path": [
 								"rides",
@@ -991,13 +1003,13 @@
 							}
 						},
 						"url": {
-							"raw": "http://3.249.111.150/rides/accept",
+							"raw": "http://3.255.136.162/rides/accept",
 							"protocol": "http",
 							"host": [
 								"3",
-								"249",
-								"111",
-								"150"
+								"255",
+								"136",
+								"162"
 							],
 							"path": [
 								"rides",
