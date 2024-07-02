@@ -45,4 +45,4 @@ npm run dev
 
 - All of the app queries can be found in this [file](https://github.com/ranaawni/ride-hailing-app/blob/main/docs/schema/query.txt), and I wrote the stored procedure for the query that fetches all rides for a specific user inside [ride-hailing-entities](https://github.com/ranaawni/ride-hailing-entities/blob/main/src/database/migrations/1719869418638-getRidesForSpecificUserProcedure.ts).
 
-- This is the app [URL](http://3.255.136.162)
+- This is the app [URL](http://34.251.141.13)
