@@ -3,7 +3,6 @@ import { UserRepository } from "ride-hailing-entities/build/src/database/reposit
 import { AppError } from "../common/AppError";
 import _ from "lodash";
 import { UserRole } from "ride-hailing-entities/build/src/database/entities/user";
-import { logger } from "../common/cloudWatchlogs";
 
 const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
@@ -23,7 +22,6 @@ export const UserService = {
 	}) => {
 		const existingUser = await UserRepository.findOne({ where: { email } });
 		if (existingUser) {
-			logger.error("User with this email already exists")
 			throw new AppError({
 				httpCode: StatusCodes.CONFLICT,
 				description: "User with this email already exists",
