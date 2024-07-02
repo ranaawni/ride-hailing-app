@@ -4,6 +4,7 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const router = require("./routes");
 import { errorHandler } from "./common/ErrorMiddleware";
+import { logger } from "./common/cloudWatchlogs";
 
 require("dotenv").config();
 const hostname = process.env.HOST || "0.0.0.0";
@@ -29,6 +30,7 @@ async function main() {
 	app.use(errorHandler);
 
 	app.get("/", (_req: any, Response: any) => {
+		logger.info("hi first")
 		Response.send("hi ");
 	});
 
