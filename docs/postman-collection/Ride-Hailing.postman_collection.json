@@ -13,7 +13,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"firstName\" : {{string}},\n    \"lastName\": {{string}},\n    \"email\" : {{string}},\n    \"password\": {{string}},\n    \"role\": {{string}} // ride,driver\n}",
+					"raw": "{\n    \"firstName\" : {{string}},\n    \"lastName\": {{string}},\n    \"email\" : {{string}},\n    \"password\":{{string}},\n    \"role\": {{string}} // driver or rider\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -438,12 +438,13 @@
 					{
 						"key": "authentication",
 						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEwLCJpYXQiOjE3MjAwMjk5NDd9.JFGQd9ext6QhRezn8vFr9ey3c_SeCGKyU0MY-juptuw",
-						"type": "text"
+						"type": "text",
+						"disabled": true
 					}
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"riderId\" : {{int}},\n    \"source\" :{{string}} , // \"latitude, longitude\"\n    \"destination\" : {{string}}  // \"latitude, longitude\"\n}",
+					"raw": "{\n    \"riderId\" : 1,\n    \"source\" :\"0.7896, 0.89544\" ,\n    \"destination\" : \"0.98556, 0.78965\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -451,9 +452,13 @@
 					}
 				},
 				"url": {
-					"raw": "{{api}}/rides/request",
+					"raw": "http://18.201.251.44/rides/request",
+					"protocol": "http",
 					"host": [
-						"{{api}}"
+						"18",
+						"201",
+						"251",
+						"44"
 					],
 					"path": [
 						"rides",
@@ -475,7 +480,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"riderId\" : 1,\n    \"source\" :\"0.7896, 0.89544\" ,\n    \"destination\" : \"0.98556, 0.78965\"\n}",
+							"raw": "{\n    \"source\" :\"0.7896, 0.89544\" ,\n    \"destination\" : \"0.98556, 0.78965\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -483,13 +488,13 @@
 							}
 						},
 						"url": {
-							"raw": "http://34.251.141.13/rides/request",
+							"raw": "http://18.201.251.44/rides/request",
 							"protocol": "http",
 							"host": [
-								"34",
+								"18",
+								"201",
 								"251",
-								"141",
-								"13"
+								"44"
 							],
 							"path": [
 								"rides",
@@ -517,7 +522,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"riderId\" : 1,\n    \"source\" :\"0.7896, 0.89544\" ,\n    \"destination\" : \"0.98556, 0.78965\"\n}",
+							"raw": "{\n    \"source\" :\"0.7896, 0.89544\" ,\n    \"destination\" : \"0.98556, 0.78965\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -525,13 +530,13 @@
 							}
 						},
 						"url": {
-							"raw": "http://34.251.141.13/rides/request",
+							"raw": "http://18.201.251.44/rides/request",
 							"protocol": "http",
 							"host": [
-								"34",
+								"18",
+								"201",
 								"251",
-								"141",
-								"13"
+								"44"
 							],
 							"path": [
 								"rides",
@@ -559,7 +564,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"riderId\" : 3,\n    \"destination\" : \"0.98556, 0.78965\"\n}",
+							"raw": "{\n    \"destination\" : \"0.98556, 0.78965\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -567,13 +572,13 @@
 							}
 						},
 						"url": {
-							"raw": "http://34.251.141.13/rides/request",
+							"raw": "http://18.201.251.44/rides/request",
 							"protocol": "http",
 							"host": [
-								"34",
+								"18",
+								"201",
 								"251",
-								"141",
-								"13"
+								"44"
 							],
 							"path": [
 								"rides",
@@ -609,13 +614,13 @@
 							}
 						},
 						"url": {
-							"raw": "http://34.251.141.13/rides/request",
+							"raw": "http://18.201.251.44/rides/request",
 							"protocol": "http",
 							"host": [
-								"34",
+								"18",
+								"201",
 								"251",
-								"141",
-								"13"
+								"44"
 							],
 							"path": [
 								"rides",
@@ -643,7 +648,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"riderId\" : 1,\n    \"source\" : 0.89544 ,\n    \"destination\" : \"0.98556, 0.78965\"\n}",
+							"raw": "{\n    \"source\" : 0.89544 ,\n    \"destination\" : \"0.98556, 0.78965\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -651,13 +656,13 @@
 							}
 						},
 						"url": {
-							"raw": "http://34.251.141.13/rides/request",
+							"raw": "http://18.201.251.44/rides/request",
 							"protocol": "http",
 							"host": [
-								"34",
+								"18",
+								"201",
 								"251",
-								"141",
-								"13"
+								"44"
 							],
 							"path": [
 								"rides",
@@ -693,12 +698,14 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:5000/rides/request",
+							"raw": "http://18.201.251.44/rides/request",
 							"protocol": "http",
 							"host": [
-								"localhost"
+								"18",
+								"201",
+								"251",
+								"44"
 							],
-							"port": "5000",
 							"path": [
 								"rides",
 								"request"
@@ -711,6 +718,47 @@
 					"header": null,
 					"cookie": [],
 					"body": "{\n    \"status\": \"error\",\n    \"message\": \"User is not a rider.\"\n}"
+				},
+				{
+					"name": "Unauthorized user",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "authentication",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEwLCJpYXQiOjE3MjAwMjk5NDd9.JFGQd9ext6QhRezn8vFr9ey3c_SeCGKyU0MY-juptuw",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"source\" :\"0.7896, 0.89544\" ,\n    \"destination\" : \"0.98556, 0.78965\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://18.201.251.44/rides/request",
+							"protocol": "http",
+							"host": [
+								"18",
+								"201",
+								"251",
+								"44"
+							],
+							"path": [
+								"rides",
+								"request"
+							]
+						}
+					},
+					"code": 401,
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": "{\n    \"httpCode\": 401,\n    \"description\": \"Unauthorized user token not provided\",\n    \"name\": \"Error\"\n}"
 				}
 			]
 		},
@@ -727,7 +775,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n   \"rideId\" : {{integer}}\n}",
+					"raw": "{\n   \"rideId\" : 4\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -955,6 +1003,47 @@
 					"header": null,
 					"cookie": [],
 					"body": "{\n    \"errors\": [\n        {\n            \"type\": \"field\",\n            \"value\": \"aa3\",\n            \"msg\": \"Ride ID must be an integer\",\n            \"path\": \"rideId\",\n            \"location\": \"body\"\n        }\n    ]\n}"
+				},
+				{
+					"name": "Unauthorized",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "authentication",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEwLCJpYXQiOjE3MjAwMjk5NDd9.JFGQd9ext6QhRezn8vFr9ey3c_SeCGKyU0MY-juptuw",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n   \"rideId\" : 4\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://18.201.251.44/rides/accept",
+							"protocol": "http",
+							"host": [
+								"18",
+								"201",
+								"251",
+								"44"
+							],
+							"path": [
+								"rides",
+								"accept"
+							]
+						}
+					},
+					"code": 401,
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": "{\n    \"httpCode\": 401,\n    \"description\": \"Unauthorized user token not provided\",\n    \"name\": \"Error\"\n}"
 				}
 			]
 		},
