@@ -34,7 +34,7 @@ async function main() {
 
 	const port = process.env.PORT || 5000;
 	app.listen(port, hostname, () =>
-		console.log(`Server is running on http://${hostname}:${port}`)
+		console.log(` Server is running on http://${hostname}:${port}`)
 	);
 }
 
