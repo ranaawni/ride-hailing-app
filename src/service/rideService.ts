@@ -18,6 +18,16 @@ export const RideService = {
 		source: string;
 		destination: string;
 	}) => {
+		const rider = await UserRepository.findOne({
+			where: { id: riderId, role: UserRole.RIDER },
+		});
+		if (!rider) {
+			throw new AppError({
+				httpCode: StatusCodes.BAD_REQUEST,
+				description: "User is not a rider.",
+			});
+		}
+
 		const existingRide = await RideRepository.findOne({
 			where: { riderId, status: RideStatus.REQUESTED },
 		});
@@ -25,16 +35,6 @@ export const RideService = {
 			throw new AppError({
 				httpCode: StatusCodes.BAD_REQUEST,
 				description: "You already have an ongoing ride request.",
-			});
-		}
-
-		const rider = await UserRepository.findOne({
-			where: { id: riderId, role: UserRole.RIDER },
-		});
-		if (!rider) {
-			throw new AppError({
-				httpCode: StatusCodes.BAD_REQUEST,
-				description: "Rider ID does not exist or user is not a rider.",
 			});
 		}
 
@@ -46,7 +46,7 @@ export const RideService = {
 		});
 
 		const requestedRide = await RideRepository.save(ride);
-		return requestedRide
+		return requestedRide;
 	},
 
 	acceptRide: async ({
@@ -56,23 +56,25 @@ export const RideService = {
 		rideId: number;
 		driverId: number;
 	}) => {
+		const driver = await UserRepository.findOne({
+			where: { id: driverId, role: UserRole.DRIVER },
+		});
+
+		if (!driver) {
+			throw new AppError({
+				httpCode: StatusCodes.NOT_FOUND,
+				description: "User is not a driver.",
+			});
+		}
+
 		const ride = await RideRepository.findOne({
 			where: { id: rideId, status: RideStatus.REQUESTED },
 		});
+
 		if (!ride) {
 			throw new AppError({
 				httpCode: StatusCodes.NOT_FOUND,
 				description: "Ride not found or already accepted",
-			});
-		}
-
-		const driver = await UserRepository.findOne({
-			where: { id: driverId, role: UserRole.DRIVER },
-		});
-		if (!driver) {
-			throw new AppError({
-				httpCode: StatusCodes.NOT_FOUND,
-				description: "Driver does not exist or user is not a driver.",
 			});
 		}
 

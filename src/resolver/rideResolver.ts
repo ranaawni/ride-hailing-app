@@ -5,7 +5,8 @@ import { StatusCodes } from "http-status-codes";
 export const RideResolver = {
 	async requestRide(req: any, res: Response, next: NextFunction) {
 		try {
-			const { riderId, source, destination } = req.body;
+			const riderId = req.userId;
+			const {source, destination } = req.body;
 
 			const ride = await RideService.requestRide({ riderId, source, destination });
 			return res
@@ -18,7 +19,8 @@ export const RideResolver = {
 
 	async acceptRide(req: any, res: Response, next: NextFunction) {
 		try {
-			const { rideId, driverId } = req.body;
+			const driverId = req.userId;
+			const { rideId } = req.body;
 
 			await RideService.acceptRide({ rideId, driverId });
 			return res.status(StatusCodes.OK).send("Ride Accepted Successfully");

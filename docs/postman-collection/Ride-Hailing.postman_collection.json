@@ -434,7 +434,13 @@
 			"name": "Request ride",
 			"request": {
 				"method": "POST",
-				"header": [],
+				"header": [
+					{
+						"key": "authentication",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEwLCJpYXQiOjE3MjAwMjk5NDd9.JFGQd9ext6QhRezn8vFr9ey3c_SeCGKyU0MY-juptuw",
+						"type": "text"
+					}
+				],
 				"body": {
 					"mode": "raw",
 					"raw": "{\n    \"riderId\" : {{int}},\n    \"source\" :{{string}} , // \"latitude, longitude\"\n    \"destination\" : {{string}}  // \"latitude, longitude\"\n}",
@@ -460,7 +466,13 @@
 					"name": "Request ride successfully",
 					"originalRequest": {
 						"method": "POST",
-						"header": [],
+						"header": [
+							{
+								"key": "authentication",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjksImlhdCI6MTcyMDAzMDMxN30.XoQiEq0Kjb1Y1HpUCpaXw_uFNDJq9LGAzKMnQ4K6kd0",
+								"type": "text"
+							}
+						],
 						"body": {
 							"mode": "raw",
 							"raw": "{\n    \"riderId\" : 1,\n    \"source\" :\"0.7896, 0.89544\" ,\n    \"destination\" : \"0.98556, 0.78965\"\n}",
@@ -493,10 +505,16 @@
 					"body": "{\n    \"riderId\": 1,\n    \"status\": \"requested\",\n    \"source\": \"0.7896, 0.89544\",\n    \"destination\": \"0.98556, 0.78965\",\n    \"id\": 4,\n    \"createdAt\": \"2024-07-02T06:18:47.000Z\"\n}"
 				},
 				{
-					"name": "Requested Ride Already Exist",
+					"name": "User already has requested ride",
 					"originalRequest": {
 						"method": "POST",
-						"header": [],
+						"header": [
+							{
+								"key": "authentication",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjksImlhdCI6MTcyMDAzMDMxN30.XoQiEq0Kjb1Y1HpUCpaXw_uFNDJq9LGAzKMnQ4K6kd0",
+								"type": "text"
+							}
+						],
 						"body": {
 							"mode": "raw",
 							"raw": "{\n    \"riderId\" : 1,\n    \"source\" :\"0.7896, 0.89544\" ,\n    \"destination\" : \"0.98556, 0.78965\"\n}",
@@ -529,46 +547,16 @@
 					"body": "{\n    \"status\": \"error\",\n    \"message\": \"You already have an ongoing ride request.\"\n}"
 				},
 				{
-					"name": "Rider not exist",
-					"originalRequest": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n    \"riderId\" : 4,\n    \"source\" :\"0.7896, 0.89544\" ,\n    \"destination\" : \"0.98556, 0.78965\"\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "http://34.251.141.13/rides/request",
-							"protocol": "http",
-							"host": [
-								"34",
-								"251",
-								"141",
-								"13"
-							],
-							"path": [
-								"rides",
-								"request"
-							]
-						}
-					},
-					"status": "Bad Request",
-					"code": 400,
-					"_postman_previewlanguage": null,
-					"header": null,
-					"cookie": [],
-					"body": "{\n    \"status\": \"error\",\n    \"message\": \"Rider ID does not exist or user is not a rider.\"\n}"
-				},
-				{
 					"name": "Source field required",
 					"originalRequest": {
 						"method": "POST",
-						"header": [],
+						"header": [
+							{
+								"key": "authentication",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjksImlhdCI6MTcyMDAzMDMxN30.XoQiEq0Kjb1Y1HpUCpaXw_uFNDJq9LGAzKMnQ4K6kd0",
+								"type": "text"
+							}
+						],
 						"body": {
 							"mode": "raw",
 							"raw": "{\n    \"riderId\" : 3,\n    \"destination\" : \"0.98556, 0.78965\"\n}",
@@ -601,46 +589,16 @@
 					"body": "{\n    \"errors\": [\n        {\n            \"type\": \"field\",\n            \"msg\": \"Source is required\",\n            \"path\": \"source\",\n            \"location\": \"body\"\n        }\n    ]\n}"
 				},
 				{
-					"name": "Rider id required",
-					"originalRequest": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n    \"source\" :\"0.7896, 0.89544\" ,\n    \"destination\" : \"0.98556, 0.78965\"\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "http://34.251.141.13/rides/request",
-							"protocol": "http",
-							"host": [
-								"34",
-								"251",
-								"141",
-								"13"
-							],
-							"path": [
-								"rides",
-								"request"
-							]
-						}
-					},
-					"status": "Bad Request",
-					"code": 400,
-					"_postman_previewlanguage": null,
-					"header": null,
-					"cookie": [],
-					"body": "{\n    \"errors\": [\n        {\n            \"type\": \"field\",\n            \"msg\": \"Rider ID is required\",\n            \"path\": \"riderId\",\n            \"location\": \"body\"\n        }\n    ]\n}"
-				},
-				{
 					"name": "destination must be string",
 					"originalRequest": {
 						"method": "POST",
-						"header": [],
+						"header": [
+							{
+								"key": "authentication",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjksImlhdCI6MTcyMDAzMDMxN30.XoQiEq0Kjb1Y1HpUCpaXw_uFNDJq9LGAzKMnQ4K6kd0",
+								"type": "text"
+							}
+						],
 						"body": {
 							"mode": "raw",
 							"raw": "{\n    \"source\" :\"0.7896, 0.89544\" ,\n    \"destination\" : \"0.98556, 0.78965\"\n}",
@@ -676,7 +634,13 @@
 					"name": "Source must be string",
 					"originalRequest": {
 						"method": "POST",
-						"header": [],
+						"header": [
+							{
+								"key": "authentication",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjksImlhdCI6MTcyMDAzMDMxN30.XoQiEq0Kjb1Y1HpUCpaXw_uFNDJq9LGAzKMnQ4K6kd0",
+								"type": "text"
+							}
+						],
 						"body": {
 							"mode": "raw",
 							"raw": "{\n    \"riderId\" : 1,\n    \"source\" : 0.89544 ,\n    \"destination\" : \"0.98556, 0.78965\"\n}",
@@ -709,13 +673,19 @@
 					"body": "{\n    \"errors\": [\n        {\n            \"type\": \"field\",\n            \"value\": 0.89544,\n            \"msg\": \"Source must be a string\",\n            \"path\": \"source\",\n            \"location\": \"body\"\n        }\n    ]\n}"
 				},
 				{
-					"name": "Rider id must be integer",
+					"name": "User not rider",
 					"originalRequest": {
 						"method": "POST",
-						"header": [],
+						"header": [
+							{
+								"key": "authentication",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTcyMDAyNjQzOH0.EffGk2XgdHKaym6s9vx6GzoY3qi-2FTq3cPfvIV0az0",
+								"type": "text"
+							}
+						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"riderId\" : \"aaa1\",\n    \"source\" :\"0.7896, 0.89544\" ,\n    \"destination\" : \"0.98556, 0.78965\"\n}",
+							"raw": "{\n    \"source\" :\"0.7896, 0.89544\" ,\n    \"destination\" : \"0.98556, 0.78965\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -723,14 +693,12 @@
 							}
 						},
 						"url": {
-							"raw": "http://34.251.141.13/rides/request",
+							"raw": "http://localhost:5000/rides/request",
 							"protocol": "http",
 							"host": [
-								"34",
-								"251",
-								"141",
-								"13"
+								"localhost"
 							],
+							"port": "5000",
 							"path": [
 								"rides",
 								"request"
@@ -742,7 +710,7 @@
 					"_postman_previewlanguage": null,
 					"header": null,
 					"cookie": [],
-					"body": "{\n    \"errors\": [\n        {\n            \"type\": \"field\",\n            \"value\": \"aaa1\",\n            \"msg\": \"Rider ID must be an integer\",\n            \"path\": \"riderId\",\n            \"location\": \"body\"\n        }\n    ]\n}"
+					"body": "{\n    \"status\": \"error\",\n    \"message\": \"User is not a rider.\"\n}"
 				}
 			]
 		},
@@ -750,10 +718,16 @@
 			"name": "Accept ride",
 			"request": {
 				"method": "POST",
-				"header": [],
+				"header": [
+					{
+						"key": "authentication",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEwLCJpYXQiOjE3MjAwMjk5NDd9.JFGQd9ext6QhRezn8vFr9ey3c_SeCGKyU0MY-juptuw",
+						"type": "text"
+					}
+				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"rideId\" : {{int}},\n    \"driverId\" : {{int}}\n}",
+					"raw": "{\n   \"rideId\" : {{integer}}\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -776,10 +750,16 @@
 					"name": "Ride Accepted",
 					"originalRequest": {
 						"method": "POST",
-						"header": [],
+						"header": [
+							{
+								"key": "authentication",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEwLCJpYXQiOjE3MjAwMzAzODB9.YS418QnLYkl7pYyJexc3D8h7Ovpfgf5IeVYZLW6CIeY",
+								"type": "text"
+							}
+						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"rideId\" : 1,\n    \"driverId\" : 4\n}",
+							"raw": "{\n    \"rideId\" : 1\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -812,10 +792,16 @@
 					"name": "Ride not found or accepted",
 					"originalRequest": {
 						"method": "POST",
-						"header": [],
+						"header": [
+							{
+								"key": "authentication",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEwLCJpYXQiOjE3MjAwMzAzODB9.YS418QnLYkl7pYyJexc3D8h7Ovpfgf5IeVYZLW6CIeY",
+								"type": "text"
+							}
+						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"rideId\" : 5,\n    \"driverId\" : 4\n}",
+							"raw": "{\n    \"rideId\" : 5\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -845,13 +831,19 @@
 					"body": "{\n    \"status\": \"error\",\n    \"message\": \"Ride not found or already accepted\"\n}"
 				},
 				{
-					"name": "Driver not exist",
+					"name": "User not driver",
 					"originalRequest": {
 						"method": "POST",
-						"header": [],
+						"header": [
+							{
+								"key": "authentication",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEwLCJpYXQiOjE3MjAwMzAzODB9.YS418QnLYkl7pYyJexc3D8h7Ovpfgf5IeVYZLW6CIeY",
+								"type": "text"
+							}
+						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"rideId\" : 3,\n    \"driverId\" : 8\n}",
+							"raw": "{\n    \"rideId\" : 3\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -878,16 +870,22 @@
 					"_postman_previewlanguage": null,
 					"header": null,
 					"cookie": [],
-					"body": "{\n    \"status\": \"error\",\n    \"message\": \"Driver does not exist or user is not a driver.\"\n}"
+					"body": "{\n    \"status\": \"error\",\n    \"message\": \"User is not a driver.\"\n}"
 				},
 				{
 					"name": "Ride id is required",
 					"originalRequest": {
 						"method": "POST",
-						"header": [],
+						"header": [
+							{
+								"key": "authentication",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEwLCJpYXQiOjE3MjAwMzAzODB9.YS418QnLYkl7pYyJexc3D8h7Ovpfgf5IeVYZLW6CIeY",
+								"type": "text"
+							}
+						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"driverId\" : 4\n}",
+							"raw": "{\n    \"rideId\" : \"\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -917,13 +915,19 @@
 					"body": "{\n    \"errors\": [\n        {\n            \"type\": \"field\",\n            \"msg\": \"Ride ID is required\",\n            \"path\": \"rideId\",\n            \"location\": \"body\"\n        }\n    ]\n}"
 				},
 				{
-					"name": "Accept ride",
+					"name": "Ride id must be integer",
 					"originalRequest": {
 						"method": "POST",
-						"header": [],
+						"header": [
+							{
+								"key": "authentication",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEwLCJpYXQiOjE3MjAwMzAzODB9.YS418QnLYkl7pYyJexc3D8h7Ovpfgf5IeVYZLW6CIeY",
+								"type": "text"
+							}
+						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"rideId\" : \"aa3\",\n    \"driverId\" : 4\n}",
+							"raw": "{\n    \"rideId\" : \"aa3\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -951,15 +955,42 @@
 					"header": null,
 					"cookie": [],
 					"body": "{\n    \"errors\": [\n        {\n            \"type\": \"field\",\n            \"value\": \"aa3\",\n            \"msg\": \"Ride ID must be an integer\",\n            \"path\": \"rideId\",\n            \"location\": \"body\"\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\" : {{string}},\n    \"password\" : {{string}}\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
 				},
+				"url": {
+					"raw": "{{api}}/login",
+					"host": [
+						"{{api}}"
+					],
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": [
 				{
-					"name": "Driver id required",
+					"name": "Login successfully",
 					"originalRequest": {
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"rideId\" : 1\n}",
+							"raw": "{\n    \"email\" : \"ranaalhmoud92@gmail.com\",\n    \"password\" : \"rana123\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -967,7 +998,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://34.251.141.13/rides/accept",
+							"raw": "http://34.251.141.13/login",
 							"protocol": "http",
 							"host": [
 								"34",
@@ -976,26 +1007,25 @@
 								"13"
 							],
 							"path": [
-								"rides",
-								"accept"
+								"login"
 							]
 						}
 					},
-					"status": "Bad Request",
-					"code": 400,
+					"status": "OK",
+					"code": 200,
 					"_postman_previewlanguage": null,
 					"header": null,
 					"cookie": [],
-					"body": "{\n    \"errors\": [\n        {\n            \"type\": \"field\",\n            \"msg\": \"Driver ID is required\",\n            \"path\": \"driverId\",\n            \"location\": \"body\"\n        }\n    ]\n}"
+					"body": "{\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTcyMDAyNTU1Mn0.5w1u0TRxFqsNqlgLtibt7GAzoSTOqqRraFL8tUPhSBE\"\n}"
 				},
 				{
-					"name": "Driver id must be integer",
+					"name": "Access denied",
 					"originalRequest": {
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"rideId\" : 1,\n    \"driverId\" : \"a55\"\n}",
+							"raw": "{\n    \"email\" : \"ranaalhmoud92@gmail.com\",\n    \"password\" : \"rana123\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1003,7 +1033,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://34.251.141.13/rides/accept",
+							"raw": "http://34.251.141.13/login",
 							"protocol": "http",
 							"host": [
 								"34",
@@ -1012,8 +1042,42 @@
 								"13"
 							],
 							"path": [
-								"rides",
-								"accept"
+								"login"
+							]
+						}
+					},
+					"status": "Unauthorized",
+					"code": 401,
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": "{\n    \"status\": \"error\",\n    \"message\": \"Access denied\"\n}"
+				},
+				{
+					"name": "Email required",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\" : \"\",\n    \"password\" : \"rana12\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://34.251.141.13/login",
+							"protocol": "http",
+							"host": [
+								"34",
+								"251",
+								"141",
+								"13"
+							],
+							"path": [
+								"login"
 							]
 						}
 					},
@@ -1022,7 +1086,42 @@
 					"_postman_previewlanguage": null,
 					"header": null,
 					"cookie": [],
-					"body": "{\n    \"errors\": [\n        {\n            \"type\": \"field\",\n            \"value\": \"a55\",\n            \"msg\": \"Driver ID must be an integer\",\n            \"path\": \"driverId\",\n            \"location\": \"body\"\n        }\n    ]\n}"
+					"body": "{\n    \"errors\": [\n        {\n            \"type\": \"field\",\n            \"value\": \"\",\n            \"msg\": \"Email is required\",\n            \"path\": \"email\",\n            \"location\": \"body\"\n        }\n    ]\n}"
+				},
+				{
+					"name": "Password required",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\" : \"ranaalhmoud92@gmail.com\",\n    \"password\" : \"\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://34.251.141.13/login",
+							"protocol": "http",
+							"host": [
+								"34",
+								"251",
+								"141",
+								"13"
+							],
+							"path": [
+								"login"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": "{\n    \"errors\": [\n        {\n            \"type\": \"field\",\n            \"value\": \"\",\n            \"msg\": \"Password is required\",\n            \"path\": \"password\",\n            \"location\": \"body\"\n        }\n    ]\n}"
 				}
 			]
 		}
